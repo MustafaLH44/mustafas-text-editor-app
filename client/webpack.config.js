@@ -28,3 +28,20 @@ module.exports = () => {
     },
   };
 };
+module.exports = {
+  entry: './src/js/index.js', // Update according to your project
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist')
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+      // other loaders
+    ],
+  },
+  mode: 'production',
+};
